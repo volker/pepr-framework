@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: pepr IDE
+Bundle-SymbolicName: org.peprframework.ide;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Volker Fritzsch
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.peprframework.ide.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui,
+ org.eclipse.gef,
+ org.eclipse.ui.views,
+ org.eclipse.ui.views.properties.tabbed,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.console,
+ org.eclipse.debug.core,
+ org.eclipse.debug.ui,
+ org.eclipse.pde.core,
+ org.eclipse.pde.runtime,
+ org.eclipse.pde.ui,
+ org.eclipse.jdt.launching,
+ org.eclipse.jface.text,
+ org.eclipse.equinox.launcher,
+ org.peprframework.core

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.5"?>
+
+<target name="pepr Framework">
+<locations>
+<location includeAllPlatforms="true" includeMode="slicer" type="InstallableUnit">
+<unit id="org.eclipse.sdk.ide" version="3.5.1.M20090917-0800"/>
+<unit id="org.eclipse.draw2d.feature.group" version="3.5.1.v20090724-1146-4407w311A192402452"/>
+<unit id="org.eclipse.gef.feature.group" version="3.5.1.v20090724-1146-777908193B6696L3DA843563"/>
+<repository location="http://download.eclipse.org/releases/galileo"/>
+</location>
+</locations>
+<environment>
+<os>macosx</os>
+<ws>cocoa</ws>
+<arch>x86</arch>
+<nl>en_GB</nl>
+</environment>
+<targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+<launcherArgs>
+<vmArgs>-Xms40m -Xmx256m -Xdock:icon=../Resources/Eclipse.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgs>
+<programArgs>-consoleLog</programArgs>
+</launcherArgs>
+</target>

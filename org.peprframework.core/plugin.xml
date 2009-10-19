@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="activity" name="pepr Activity Extension Point" schema="schema/activity.exsd"/>
+   <extension-point id="starter" name="pepr Starter Extension Point" schema="schema/starter.exsd"/>
+   <extension-point id="configuration" name="pepr Configuration Extension Point" schema="schema/configuration.exsd"/>
+</plugin>

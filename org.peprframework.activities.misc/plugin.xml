@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+ <extension
+         point="org.peprframework.core.starter">
+      <starter
+            configuration="org.peprframework.starters.misc.configuration.File"
+            description="File Starter"
+            id="org.peprframework.starters.misc.file"
+            implementation="org.peprframework.activities.FileStarter"
+            name="File"
+            output="org.peprframework.activities.FileStarterOutput">
+      </starter>
+      <starter
+            configuration="org.peprframework.starters.misc.configuration.Microphone"
+            description="Microphone Starter"
+            id="org.peprframework.starters.misc.microphone"
+            implementation="org.peprframework.activities.MicrophoneStarter"
+            name="Microphone"
+            output="org.peprframework.activities.MicrophoneOutput">
+      </starter>
+      <starter
+            configuration="org.peprframework.starters.misc.configuration.Timer"
+            description="Timer Starter"
+            id="org.peprframework.starters.misc.timer"
+            implementation="org.peprframework.activities.Timer"
+            name="Timer">
+      </starter>
+   </extension>
+   <extension
+         point="org.peprframework.core.activity">
+      <activity
+            description="Joins different Contexts based on the package number of those contexts."
+            id="org.peprframework.activities.misc.joinOnPackageNumber"
+            implementation="org.peprframework.activities.misc.JoinOnPackageNumber"
+            largeIcon="icons/join_large.png"
+            name="Join (Package Number)"
+            processIcon="icons/join_large.png">
+      </activity>
+      <activity
+            configuration="MovingAverageConfiguration"
+            description="Moving Average Activity"
+            id="org.peprframework.activities.misc.movingaverage"
+            implementation="org.peprframework.activities.misc.MovingAverage"
+            input="org.peprframework.activities.misc.MovingAverageInput"
+            name="Moving Average"
+            output="org.peprframework.activities.misc.MovingAverageOutput">
+      </activity>
+      <activity
+            configuration="org.peprframework.activities.misc.configuration.plotter"
+            description="A graphical plotter"
+            id="org.peprframework.activities.misc.plotter"
+            implementation="org.peprframework.activities.misc.Plotter"
+            input="org.peprframework.activities.misc.PlotterInput"
+            largeIcon="icons/output_large.png"
+            name="Plotter"
+            processIcon="icons/output_large.png">
+      </activity>
+      <activity
+            description="prints a message"
+            id="org.peprframework.activities.misc.print"
+            implementation="org.peprframework.activities.misc.PrintMessageActivity"
+            input="java.lang.String"
+            largeIcon="icons/output_large.png"
+            name="Printer"
+            processIcon="icons/output_large.png">
+      </activity>
+      <activity
+            configuration="SynchronyConfiguration"
+            description="Detects synchrony (maximal cross correlation) and the corresponding lag between two separate signals"
+            id="org.peprframework.activities.misc.synchrony"
+            implementation="org.peprframework.activities.misc.Synchrony"
+            input="org.peprframework.activities.misc.SynchronyInput"
+            name="Synchrony"
+            output="org.peprframework.activities.misc.SynchronyOutput">
+      </activity>
+      <activity
+            configuration="org.peprframework.activities.misc.configuration.JoinOnTimestamp"
+            description="Joins different Contexts based on their timestamp."
+            id="org.peprframework.activities.misc.joinOnTimestamp"
+            implementation="org.peprframework.activities.misc.JoinOnTimestamp"
+            largeIcon="icons/join_large.png"
+            name="Join (Timestamp)"
+            processIcon="icons/join_large.png">
+      </activity>
+      <activity
+            configuration="org.peprframework.activities.misc.configuration.binaryvisualization"
+            description="Output to visualize events (such as Smiles)"
+            id="org.peprframework.activities.misc.binaryvisualization"
+            implementation="org.peprframework.activities.misc.BinaryVisualization"
+            input="org.peprframework.activities.misc.BinaryVisualizationInput"
+            largeIcon="icons/output_large.png"
+            name="BinaryVisualization"
+            processIcon="icons/output_large.png">
+      </activity>
+      <activity
+            configuration="org.peprframework.activities.misc.configuration.buffer"
+            description="Buffers &quot;x&quot; values and delays the output"
+            id="org.peprframework.activities.misc.buffer"
+            implementation="org.peprframework.activities.misc.Buffer"
+            input="org.peprframework.activities.misc.BufferInput"
+            name="Buffer"
+            output="org.peprframework.activities.misc.BufferOutput">
+      </activity>
+      <activity
+            configuration="org.peprframework.activities.misc.configuration.socketconnection"
+            description="Establishes a socket connection to a server"
+            id="org.peprframework.activities.misc.socketconnection"
+            implementation="org.peprframework.activities.misc.SocketConnection"
+            input="org.peprframework.activities.misc.SocketConnectionInput"
+            name="Socket Connection"
+            output="org.peprframework.activities.misc.SocketConnectionOutput">
+      </activity>
+      <activity
+            description="Logs its input data to a file"
+            id="org.peprframework.activities.misc.logger"
+            implementation="org.peprframework.activities.misc.Logger"
+            input="org.peprframework.activities.misc.LoggerInput"
+            name="Logger">
+      </activity>
+   </extension>
+   <extension
+         point="org.peprframework.core.configuration">
+      <configuration
+            id="MovingAverageConfiguration"
+            implementation="org.peprframework.activities.misc.MovingAverageConfiguration">
+         <property
+               field="alpha"
+               name="alpha"
+               type="double">
+         </property>
+      </configuration>
+      <configuration
+            id="SynchronyConfiguration"
+            implementation="org.peprframework.activities.misc.SynchronyConfiguration">
+         <property
+               description="Number of Frames to compare"
+               field="compareRange"
+               name="Compare Range"
+               type="int">
+         </property>
+         <property
+               description="Number of Frames that might lag behind"
+               field="maxLag"
+               name="Maximum Lag"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.activities.misc.configuration.JoinOnTimestamp"
+            implementation="org.peprframework.activities.misc.JoinOnTimestampConfiguration">
+         <property
+               description="Maximum distance between frames in milliseconds."
+               field="maximumDistanceMillis"
+               name="Maximum Distance (Milliseconds)"
+               type="long">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.activities.misc.configuration.binaryvisualization"
+            implementation="org.peprframework.activities.misc.BinaryVisualizationConfiguration">
+         <property
+               description="Below this threshold FalseImage is displayed above TrueImage"
+               field="threshold"
+               name="Threshold"
+               type="float">
+         </property>
+         <property
+               description="Filename of the image to be displayed in false cases"
+               field="falseImage"
+               name="FalseImage"
+               type="text">
+         </property>
+         <property
+               description="Filename of the image to be displayed in true cases"
+               field="trueImage"
+               name="TrueImage"
+               type="text">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.activities.misc.configuration.plotter"
+            implementation="org.peprframework.activities.misc.PlotterConfiguration">
+         <property
+               field="upperBarrier"
+               name="Upper Limit"
+               type="double">
+         </property>
+         <property
+               field="lowerBarrier"
+               name="Lower Limit"
+               type="double">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.activities.misc.configuration.buffer"
+            implementation="org.peprframework.activities.misc.BufferConfiguration">
+         <property
+               description="Size of the Buffer"
+               field="bufferSize"
+               name="BufferSize"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.activities.misc.configuration.socketconnection"
+            implementation="org.peprframework.activities.misc.SocketConnectionConfiguration">
+         <property
+               description="IP address of the server"
+               field="address"
+               name="Server Address"
+               type="String">
+         </property>
+         <property
+               description="Port number of the server"
+               field="port"
+               name="Server Port"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.activities.misc.configuration.logger"
+            implementation="org.peprframework.activities.misc.LoggerConfiguration">
+         <property
+               description="location of the logfile"
+               field="logfile"
+               name="Logfile"
+               type="String">
+         </property>
+         <property
+               description="Denotes the separation element between the log entries (String)"
+               field="separator"
+               name="Separator"
+               type="String">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.starters.misc.configuration.File"
+            implementation="org.peprframework.activities.FileStarterConfiguration">
+         <property
+               field="filename"
+               name="filename"
+               type="file">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.starters.misc.configuration.Microphone"
+            implementation="org.peprframework.activities.MicrophoneStarterConfiguration">
+         <property
+               field="bigEndian"
+               name="bigEndian"
+               type="boolean">
+         </property>
+         <property
+               field="bufferSizeInBytes"
+               name="bufferSizeInBytes"
+               type="int">
+         </property>
+         <property
+               field="channels"
+               name="channels"
+               type="int">
+         </property>
+         <property
+               field="overlapLengthMs"
+               name="overlapLengthMs"
+               type="int">
+         </property>
+         <property
+               field="recordLengthMs"
+               name="recordLengthMs"
+               type="int">
+         </property>
+         <property
+               field="sampleRate"
+               name="sampleRate"
+               type="float">
+         </property>
+         <property
+               field="sampleSizeInBits"
+               name="sampleSizeInBits"
+               type="int">
+         </property>
+         <property
+               field="signed"
+               name="signed"
+               type="boolean">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.starters.misc.configuration.Timer"
+            implementation="org.peprframework.activities.TimerConfiguration">
+      </configuration>
+   </extension>
+</plugin>

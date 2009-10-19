@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.peprframework.core.activity">
+      <activity
+            configuration="SupportVectorMachineConfiguration"
+            description="Support Vector Machine Activity"
+            id="org.peprframework.activities.svm"
+            implementation="org.peprframework.activities.svm.SupportVectorMachine"
+            input="org.peprframework.activities.svm.SupportVectorMachineInput"
+            name="Support Vector Machine"
+            output="org.peprframework.activities.svm.SupportVectorMachineOutput">
+      </activity>
+   </extension>
+   <extension
+         point="org.peprframework.core.configuration">
+      <configuration
+            id="SupportVectorMachineConfiguration"
+            implementation="org.peprframework.activities.svm.SupportVectorMachineConfiguration">
+         <property
+               field="modelFile"
+               name="modelFile"
+               type="file">
+         </property>
+      </configuration>
+   </extension>
+</plugin>

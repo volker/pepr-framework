@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.peprframework.resources.opencv
+Bundle-SymbolicName: org.peprframework.resources.opencv;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Volker Fritzsch
+Eclipse-ExtensibleAPI: true
+Export-Package: com.sun.jna,
+ com.sun.jna.ptr,
+ com.sun.jna.win32,
+ org.peprframework.resources.opencv

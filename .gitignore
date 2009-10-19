@@ -1,0 +1,8 @@
+*.log
+target/
+bin/
+.DS_Store
+/org.peprframework.updatesite/features/
+/org.peprframework.updatesite/plugins/
+/org.peprframework.updatesite/content.jar
+/org.peprframework.updatesite/artifacts.jar

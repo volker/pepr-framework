@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SVM Activity
+Bundle-SymbolicName: org.peprframework.activities.svm;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Volker Fritzsch
+Require-Bundle: org.peprframework.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: .,
+ lib/libsvm-2.89.jar

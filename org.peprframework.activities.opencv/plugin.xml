@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+         point="org.peprframework.core.starter">
+      <starter
+            configuration="org.peprframework.opencv.configurations.camera"
+            description="Camera Input"
+            id="org.peprframework.activities.opencv.camera"
+            implementation="org.peprframework.activities.opencv.Camera"
+            name="Camera"
+            output="org.peprframework.activities.opencv.OpenCVImage">
+      </starter>
+      <starter
+            configuration="org.peprframework.opencv.configurations.video"
+            description="Starter taking input from a video file"
+            id="org.peprframework.activities.opencv.video"
+            implementation="org.peprframework.activities.opencv.Video"
+            name="Video"
+            output="org.peprframework.activities.opencv.OpenCVImage">
+      </starter>
+   </extension>
+   <extension
+         point="org.peprframework.core.activity">
+      <activity
+            configuration="org.peprframework.opencv.configurations.detection"
+            id="org.peprframework.activities.opencv.detection"
+            implementation="org.peprframework.activities.opencv.Detection"
+            input="org.peprframework.activities.opencv.OpenCVImage"
+            name="Haar Detection"
+            output="org.peprframework.activities.opencv.DetectionData">
+      </activity>
+      <activity
+            configuration="org.peprframework.opencv.configurations.markarea"
+            description="Marks several areas in a distinct color"
+            id="org.peprframework.activities.opencv.markarea"
+            implementation="org.peprframework.activities.opencv.MarkArea"
+            input="org.peprframework.activities.opencv.MarkAreaInput"
+            name="Mark Area"
+            output="org.peprframework.activities.opencv.MarkAreaOutput">
+      </activity>
+      <activity
+            configuration="org.peprframework.opencv.configurations.lucaskanade"
+            description="Optical Flow Estimation"
+            id="org.peprframework.activities.opencv.LucasKanade"
+            implementation="org.peprframework.activities.opencv.LucasKanade"
+            input="org.peprframework.activities.opencv.LucasKanadeInput"
+            name="LucasKanade"
+            output="org.peprframework.activities.opencv.LucasKanadeOutput">
+      </activity>
+      <activity
+            configuration="org.peprframework.opencv.configurations.drawopticalflow"
+            description="Draws the Optical Flow into the input image"
+            id="org.peprframework.activities.opencv.drawopticalflow"
+            implementation="org.peprframework.activities.opencv.DrawOpticalFlow"
+            input="org.peprframework.activities.opencv.DrawOpticalFlowInput"
+            name="DrawOpticalFlow"
+            output="org.peprframework.activities.opencv.DrawOpticalFlowOutput">
+      </activity>
+      <activity
+            configuration="org.peprframework.opencv.configurations.writevideotofile"
+            description="Writes a video to file (composed by single pictures)"
+            id="org.peprframework.activities.opencv.writevideotofile"
+            implementation="org.peprframework.activities.opencv.WriteVideoToFile"
+            input="org.peprframework.activities.opencv.WriteVideoToFileInput"
+            name="WriteVideoToFile"
+            output="java.lang.Void">
+      </activity>
+   </extension>
+   <extension
+         point="org.peprframework.core.configuration">
+      <configuration
+            id="org.peprframework.opencv.configurations.camera"
+            implementation="org.peprframework.activities.opencv.CameraConfiguration">
+         <property
+               field="libraryPath"
+               name="OpenCV Library Path"
+               type="Text">
+         </property>
+         <property
+               field="width"
+               name="Image Width"
+               type="int">
+         </property>
+         <property
+               field="height"
+               name="Image Height"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.opencv.configurations.detection"
+            implementation="org.peprframework.activities.opencv.DetectionConfiguration">
+         <property
+               field="filename"
+               name="Filename"
+               type="text">
+         </property>
+         <property
+               field="scale"
+               name="Scale"
+               type="double">
+         </property>
+         <property
+               field="flags"
+               name="Flags"
+               type="int">
+         </property>
+         <property
+               field="neighbours"
+               name="Neighbours"
+               type="int">
+         </property>
+         <property
+               field="width"
+               name="Width"
+               type="int">
+         </property>
+         <property
+               field="height"
+               name="Height"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.opencv.configurations.markarea"
+            implementation="org.peprframework.activities.opencv.MarkAreaConfiguration">
+         <property
+               description="a value between 0 and 255"
+               field="red"
+               name="RED"
+               type="int">
+         </property>
+         <property
+               description="a value between 0 and 255"
+               field="green"
+               name="GREEN"
+               type="int">
+         </property>
+         <property
+               description="a value between 0 and 255"
+               field="blue"
+               name="BLUE"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.opencv.configurations.lucaskanade"
+            implementation="org.peprframework.activities.opencv.LucasKanadeConfiguration">
+         <property
+               description="the number of features to be tracked in the image"
+               field="numFeatures"
+               name="NumFeatures"
+               type="int">
+         </property>
+         <property
+               description="Height of optical flow window"
+               field="optical_flow_window_height"
+               name="Optical Flow Window Height"
+               type="int">
+         </property>
+         <property
+               description="Width of optical flow window"
+               field="optical_flow_window_width"
+               name="Optical Flow Window Height"
+               type="int">
+         </property>
+         <property
+               description="Termination criterion epsilon"
+               field="optical_flow_termination_criteria_epsilon"
+               name="Epsilon"
+               type="double">
+         </property>
+         <property
+               description="Termination criterion max. number of Iterations"
+               field="optical_flow_termination_criteria_max_iter"
+               name="Max. Iterations"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.opencv.configurations.drawopticalflow"
+            implementation="org.peprframework.activities.opencv.DrawOpticalFlowConfiguration">
+         <property
+               description="Thickness of the drawn line"
+               field="lineThickness"
+               name="Line Thickness"
+               type="int">
+         </property>
+         <property
+               description="a value between 0 and 255"
+               field="blue"
+               name="BLUE"
+               type="int">
+         </property>
+         <property
+               description="a value between 0 and 255"
+               field="red"
+               name="RED"
+               type="int">
+         </property>
+         <property
+               description="a value between 0 and 255"
+               field="green"
+               name="GREEN"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.opencv.configurations.writevideotofile"
+            implementation="org.peprframework.activities.opencv.WriteVideoToFileConfiguration">
+         <property
+               description="Specifies the filename to which the video is written"
+               field="filename"
+               name="Filename"
+               type="String">
+         </property>
+         <property
+               description="0.. video is black and white; 1.. video is in color"
+               field="isColor"
+               name="Color"
+               type="int">
+         </property>
+         <property
+               description="Frames per second"
+               field="fps"
+               name="FPS"
+               type="int">
+         </property>
+      </configuration>
+      <configuration
+            id="org.peprframework.opencv.configurations.video"
+            implementation="org.peprframework.activities.opencv.VideoConfiguration">
+         <property
+               field="libraryPath"
+               name="OpenCV Library Path"
+               type="Text">
+         </property>
+         <property
+               field="width"
+               name="Image Width"
+               type="int">
+         </property>
+         <property
+               field="height"
+               name="Image Height"
+               type="int">
+         </property>
+         <property
+               field="filename"
+               name="Filename"
+               type="String">
+         </property>
+      </configuration>
+   </extension>
+
+</plugin>

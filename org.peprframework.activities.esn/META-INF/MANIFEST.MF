@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ESN
+Bundle-SymbolicName: org.peprframework.activities.esn;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.peprframework.activities.esn
+Bundle-Vendor: Volker Fritzsch
+Require-Bundle: org.peprframework.core
+Bundle-ClassPath: .,
+ lib/colt.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

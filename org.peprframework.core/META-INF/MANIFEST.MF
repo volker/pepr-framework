@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: org.peprframework.core;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: javax.xml.bind.annotation,
+ org.peprframework.core;
+  uses:="org.eclipse.core.runtime,
+   org.jetlang.core,
+   org.jetlang.channels,
+   org.eclipse.core.resources,
+   org.osgi.framework"
+Bundle-Vendor: Volker Fritzsch
+Bundle-ClassPath: .,
+ lib/jetlang-0.1.7.jar,
+ lib/groovy-all-1.6.0.jar,
+ lib/jaxb-api.jar,
+ lib/jsr173_1.0_api.jar,
+ lib/jaxb-impl.jar,
+ lib/activation.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime
+Bundle-Activator: org.peprframework.core.CorePlugin
+Eclipse-BuddyPolicy: registered
+Bundle-ActivationPolicy: lazy

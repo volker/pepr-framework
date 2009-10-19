@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.peprframework.ide.application"
+         name="pepr"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            icon="icons/pepr.icns"
+            thread="main"
+            visible="true">
+         <run
+               class="org.peprframework.ide.branding.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="pepr_framework"
+         name="pepr"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.peprframework.ide.application"
+            description="pepr Framework"
+            name="pepr">
+         <property
+               name="appName"
+               value="pepr">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

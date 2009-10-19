@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.peprframework.activities.opencv
+Bundle-SymbolicName: org.peprframework.activities.opencv;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Volker Fritzsch
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.peprframework.core,
+ org.peprframework.resources.opencv

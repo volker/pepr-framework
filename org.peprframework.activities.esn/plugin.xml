@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.peprframework.core.activity">
+      <activity
+            configuration="EchoStateNetworkConfiguration"
+            description="Echo State Network Activity"
+            id="org.peprframework.activities.esn"
+            implementation="org.peprframework.activities.esn.EchoStateNetwork"
+            input="org.peprframework.activities.esn.EchoStateNetworkInput"
+            name="ESN"
+            output="org.peprframework.activities.esn.EchoStateNetworkOutput">
+      </activity>
+   </extension>
+   <extension
+         point="org.peprframework.core.configuration">
+      <configuration
+            id="EchoStateNetworkConfiguration"
+            implementation="org.peprframework.activities.esn.EchoStateNetworkConfiguration">
+         <property
+               field="inputWeightsFile"
+               name="inputWeightsFile"
+               type="file">
+         </property>
+         <property
+               field="outputWeightsFile"
+               name="outputWeightsFile"
+               type="file">
+         </property>
+         <property
+               field="internalWeightsFile"
+               name="internalWeightsFile"
+               type="file">
+         </property>
+         <property
+               field="directOutputWeightsFile"
+               name="directOutputWeightsFile"
+               type="file">
+         </property>
+      </configuration>
+   </extension>
+</plugin>

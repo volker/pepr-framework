@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="pepr Framework Update Site" url="http://volker.github.com/pepr-framework/org.peprframework.updatesite/site.xml">
+      Update site of the pepr framework.
+   </description>
+   <feature url="features/org.peprframework.feature.all_1.0.0.200910190044.jar" id="org.peprframework.feature.all" version="1.0.0.200910190044" os="macosx,win32" arch="x86">
+      <category name="org.peprframework"/>
+   </feature>
+   <category-def name="org.peprframework" label="pepr Framework"/>
+</site>

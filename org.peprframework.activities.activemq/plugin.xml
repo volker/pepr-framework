@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.peprframework.core.activity">
+      <activity
+            configuration="org.peprframework.activities.activemq.jmsconfiguration"
+            id="org.peprframework.activities.activemq.producer"
+            implementation="org.peprframework.activities.activemq.Producer"
+            input="org.peprframework.activities.activemq.JmsPayload"
+            largeIcon="icons/output_large.png"
+            name="JMS Producer"
+            processIcon="icons/output_large.png">
+      </activity>
+   </extension>
+   <extension
+         point="org.peprframework.core.configuration">
+      <configuration
+            id="org.peprframework.activities.activemq.jmsconfiguration"
+            implementation="org.peprframework.activities.activemq.JmsConfiguration">
+         <property
+               field="providerUrl"
+               name="Provider URL"
+               type="Text">
+         </property>
+         <property
+               field="username"
+               name="Username"
+               type="text">
+         </property>
+         <property
+               field="password"
+               name="Password"
+               type="text">
+         </property>
+         <property
+               field="topic"
+               name="Topic"
+               type="text">
+         </property>
+      </configuration>
+   </extension>
+   <extension
+         point="org.peprframework.core.starter">
+      <starter
+            configuration="org.peprframework.activities.activemq.jmsconfiguration"
+            id="org.peprframework.activities.activemq.receiver"
+            implementation="org.peprframework.activities.activemq.Receiver"
+            name="JMS Receiver"
+            output="org.peprframework.activities.activemq.JmsPayload">
+      </starter>
+   </extension>
+
+</plugin>

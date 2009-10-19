@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Video Plug-in
+Bundle-SymbolicName: org.peprframework.activities.video;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.peprframework.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Volker Fritzsch

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Miscellaneous Activities
+Bundle-SymbolicName: org.peprframework.activities.misc;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.peprframework.activities.misc
+Bundle-Vendor: Volker Fritzsch
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.peprframework.core
