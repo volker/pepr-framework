@@ -1,4 +1,0 @@
-pepr-Framework: Process Engine for Pattern Recognition
-=======================================================
-
-The process engine for pattern recognition and information fusion tasks, the _pepr framework_, allows for development of applications in the field of pattern recognition and information fusion in an abstraction level above that of common programming languages, therefore reducing the time to develop such solutions by allowing the reuse of established and well tested components. The framework is designed to be highly expandable in order to allow easy adaption to unique challenges and comes with a user interface that enables the creation of solutions in a graphical, modelled, manner.
