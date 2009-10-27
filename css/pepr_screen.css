@@ -1,0 +1,99 @@
+html,
+body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-color: #000000;
+}
+
+#header {
+	height: 80px;
+	background-color: #CC9933;
+}
+
+h1#logo {
+	margin-top: 0px;
+	padding-top: 23px; 
+}
+
+h1#logo a {
+	background: url(../images/pepr-framework.gif) no-repeat 0 0;
+	width: 284px;
+	height: 57px;
+	display: block;
+}
+
+#content {
+	color: #000000;
+	background-color: #ffffff;
+	padding-bottom: 40px;
+}
+
+#content .bubble {
+	margin-top: -21px;
+	margin-left:  -14px;
+	margin-bottom: 40px;
+	background: url(../images/bubble.gif) no-repeat 0 0;
+	width: 691px;
+	height: 130px;
+	display: block;
+}
+
+#content .bubble .text {
+	padding-top: 28px;
+	padding-left: 28px;
+	color: #ffffff;
+	font-size: 30px;
+	font-family: arial;
+	font-style: normal;
+	font-weight: bold;
+	text-align: left;
+}
+
+#content .title {
+	padding-bottom: 8px;
+	font-size: 18px;
+	font-family: arial;
+	font-style: normal;
+	font-weight: bold;
+}
+
+#content .text {
+	padding-left: 3px;
+	font-size: 12px;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+}
+
+#footer {
+	color: #ffffff;
+	background-color: #000000;
+	padding-top: 20px;
+}
+
+#footer .title {
+	font-size: 18px;
+	font-family: arial;
+	font-style: normal;
+	font-weight: bold;
+}
+
+#footer .links {
+	padding-left: 3px;
+	font-size: 11px;
+	font-family: verdana;
+	font-style: normal;
+	font-weight: normal;
+}
+
+#footer .links a:link,
+#footer .links a:visited,
+#footer .links a:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+#footer .links a:hover {
+	color: inherit;
+	text-decoration: underline;
+}
